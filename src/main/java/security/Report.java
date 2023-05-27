@@ -13,10 +13,10 @@ import utils.ConfigurationZAP;
 public class Report {
  public static void generate(ClientApi api) throws ClientApiException {
   if (api !=null){
-   ApiResponse response= api.reports.generate(
-           ConfigurationZAP.TITLE, ConfigurationZAP.TEMPLATE,null, ConfigurationZAP.DESCRIPTION,null,null,
-           null,null,null, ConfigurationZAP.REPORTFILENAME,null, ConfigurationZAP.TARGETFOLDER,null);
-   System.out.println("Report: " +response.toString());
+   ApiResponse response=
+           api.reports.generate(ConfigurationZAP.TITLE, ConfigurationZAP.TEMPLATE,null,
+                   ConfigurationZAP.DESCRIPTION,null,null,null,null,
+         null, ConfigurationZAP.REPORTFILENAME,null, ConfigurationZAP.TARGETFOLDER,null);
   }
  }
 }
