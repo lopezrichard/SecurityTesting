@@ -25,7 +25,7 @@ private WebDriverWait wait;
 
 @BeforeTest
 public void setUp(){
- driver= ChromeDriver.create();
+ driver= ChromeDriverCreator.createWebDriver();
  api=new ClientApi(ConfigurationZAP.ZAP_PROXY_ADDRESS, ConfigurationZAP.ZAP_PROXY_PORT, ConfigurationZAP.ZAP_API_KEY);
  wait=  new WebDriverWait(driver, Duration.ofSeconds(2));
  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

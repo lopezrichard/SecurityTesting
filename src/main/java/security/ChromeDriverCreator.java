@@ -2,6 +2,7 @@ package security;
 
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import utils.ConfigurationZAP;
 
@@ -10,16 +11,16 @@ import utils.ConfigurationZAP;
  * https://www.linkedin.com/in/richard-lopez-/
  * https://github.com/lopezrichard
  */
-public class ChromeDriver {
-    public static WebDriver create(){
+public class ChromeDriverCreator {
+    public static WebDriver createWebDriver(){
         String proxyServerURL= ConfigurationZAP.ZAP_PROXY_ADDRESS+":"+ ConfigurationZAP.ZAP_PROXY_PORT;
         Proxy proxy=new Proxy();
         proxy.setHttpProxy(proxyServerURL);
         proxy.setSslProxy(proxyServerURL);
-        ChromeOptions co=new ChromeOptions();
-        co.setProxy(proxy);
-        co.addArguments("--remote-allow-origins=*");
-        co.addArguments("--disable-dev-shm-usage", "--ignore-ssl-errors=yes", "--ignore-certificate-errors");
-     return new org.openqa.selenium.chrome.ChromeDriver(co);
+        ChromeOptions chromeOptions=new ChromeOptions();
+        chromeOptions.setProxy(proxy);
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--disable-dev-shm-usage", "--ignore-ssl-errors=yes", "--ignore-certificate-errors");
+    return new ChromeDriver(chromeOptions);
     }
 }
