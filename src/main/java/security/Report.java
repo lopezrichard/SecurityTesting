@@ -16,7 +16,7 @@ public class Report {
    ApiResponse response=
            api.reports.generate(ConfigurationZAP.TITLE, ConfigurationZAP.TEMPLATE,null,
                    ConfigurationZAP.DESCRIPTION,null,null,null,null,
-         null, ConfigurationZAP.REPORTFILENAME,null, ConfigurationZAP.TARGETFOLDER,null);
+         null, ConfigurationZAP.REPORT_FILENAME,null, ConfigurationZAP.TARGET_FOLDER,null);
   }
  }
 }

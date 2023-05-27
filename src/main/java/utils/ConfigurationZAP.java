@@ -12,6 +12,6 @@ public class ConfigurationZAP {
  public static final String TITLE="Recurity report";
  public static final String TEMPLATE="high-level-report";
  public static final String DESCRIPTION = "zap ChromeDriver.ChromeDriver test";
- public static final String REPORTFILENAME="report.html";
- public static final String TARGETFOLDER = System.getProperty("user.dir");
+ public static final String REPORT_FILENAME ="report.html";
+ public static final String TARGET_FOLDER = System.getProperty("user.dir");
 }
